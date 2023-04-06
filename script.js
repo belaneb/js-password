@@ -9,14 +9,7 @@ var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-console.log (specialCharacters, upperCase, lowerCase, numericCharacters)
-
-/* 
-var index = Math.floor(Math.random() * specialCharacters.length);
-var index = Math.floor(Math.random() * upperCase.length);
-var index = Math.floor(Math.random() * lowerCase.length);
-var index = Math.floor(Math.random() * numericCharacters.length);
-*/
+//console.log (specialCharacters, upperCase, lowerCase, numericCharacters)
 
 function generatePassword () {
   askHowManyCharacters()
@@ -25,7 +18,7 @@ function generatePassword () {
   askIfLowerCaseWanted()
   askIfNumbersWanted()
 
-  // if special, upper, lower, and numeric are all false, try again
+    // if special, upper, lower, and numeric are all false, try again
   var options = []
   if (special) {
     // options = options + specialCharacters
@@ -43,12 +36,18 @@ function generatePassword () {
     // options = options + numericCharacters
     options += numericCharacters
   }
+  
+  //console.log("Here is options: ", options[0])
 
 var password = ''
   //for loop that iterates over the length variable
+
+  //console.log(length)
+
   for (var i = 0; i < length; i++) {
     var index = Math.floor(Math.random() * options.length);
     //use index to select a character from the options array and add that to the password
+    password = password + options[index]
   }
   return password
 }
